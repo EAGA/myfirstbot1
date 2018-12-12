@@ -1,1 +1,1 @@
-web: lua web.lua 25565
+web: lua web.lua 5000

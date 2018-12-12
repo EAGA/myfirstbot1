@@ -1,12 +1,27 @@
-local litcord = require('litcord')
-local client = litcord('NTIyMjg3MzU1NTA0MzYxNDcz.DvKkNw.d5HLnw1okApixqKbbiXmJfOjlpg')
+-- web.lua
+require "xavante"
+require "xavante.filehandler"
 
-client:on(
-	'messageCreate',
-	function(message)
-		local author = message.author
-		print(author.username..': '..message.clean)
-	end
-)
+port = ...
 
-litcord:run()
+xavante.HTTP {
+  server = { host = "*", port = tonumber(port) },
+  defaultHost = {
+    rules = {
+      {
+        match = "/$",
+        with = function(req, res)
+          res.headers["Content-type"] = "text/html"
+          res.content = "hello world, the time is: " .. os.date()
+          return res
+        end
+      }, {
+        match = ".",
+        with = xavante.filehandler,
+        params = { baseDir = "static/" }
+      }
+    }
+  }
+}
+
+xavante.start()

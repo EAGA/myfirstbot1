@@ -1,0 +1,4 @@
+package = 'xavante'
+dependencies = {
+  "xavante" 
+}

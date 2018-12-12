@@ -52,7 +52,6 @@ build = {
 	};
 }
 
-
 package = 'litcord'
 version = '1.0.0-1'
 source = {

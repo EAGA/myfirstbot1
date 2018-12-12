@@ -15,7 +15,7 @@ supported_platforms = {
 	"windows";
 }
 dependencies = {
-	"lua";
+	'lua >= 5.1';
 }
 external_dependencies = {
 	OPENSSL = {

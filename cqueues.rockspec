@@ -17,7 +17,7 @@ supported_platforms = {
 	"solaris";
 }
 dependencies = {
-	"lua == 5.3";
+	"lua <= 5.3";
 }
 external_dependencies = {
 	OPENSSL = {

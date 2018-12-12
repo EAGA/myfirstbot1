@@ -1,1 +1,1 @@
-worker: node bot.js
+web:     lua web.lua 25565

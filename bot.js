@@ -5,6 +5,12 @@ client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
 })
 
+client.on("message", message => {
+    if (message.content == "ping") {
+        message.reply("pong");
+    }
+});
+
 // Get your bot's secret token from:
 // https://discordapp.com/developers/applications/
 // Click on your application -> Bot -> Token -> "Click to Reveal Token"
